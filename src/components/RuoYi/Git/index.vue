@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       // url: 'https://gitee.com/y_project/RuoYi-Vue'
-      url: 'https://github.com/lurenha/blogSpringBoot'
+      url: 'https://github.com/SeaHamster/copying-blogs'
     }
   },
   methods: {
