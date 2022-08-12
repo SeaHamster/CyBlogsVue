@@ -33,7 +33,7 @@ module.exports = {
     proxy: {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
-        //target: `http://localhost:1555`,
+        // target: `http://localhost:1555`,
         target: `http://copying.tpddns.cn:1555`,
         changeOrigin: true,
         pathRewrite: {
