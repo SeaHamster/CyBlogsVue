@@ -17,13 +17,13 @@
         <el-row>
           <el-col :span="24">
             <el-form-item style="margin-bottom: 40px;" prop="title">
-              <MDinput v-model="postForm.title" :maxlength="100" name="name" required>Title</MDinput>
+              <MDinput v-model="postForm.title" :maxlength="255" name="name" required>标题</MDinput>
             </el-form-item>
 
             <div class="postInfo-container">
               <el-row>
                 <el-col :span="8">
-                  <el-form-item label-width="60px" label="Type:" class="postInfo-container-item">
+                  <el-form-item label-width="60px" label="类型:" class="postInfo-container-item">
                     <el-select v-model="postForm.typeId" placeholder="请选择类型">
                       <el-option
                         v-for="item in typelist"
@@ -38,7 +38,7 @@
                 <el-col :span="10">
                   <el-form-item
                     label-width="150px"
-                    label="ImageUrl:"
+                    label="图片地址:"
                     class="postInfo-container-item"
                   >
                     <el-input placeholder="请输入内容" style="width:400px" v-model="postForm.backgroundImage" clearable></el-input>
@@ -49,7 +49,7 @@
           </el-col>
         </el-row>
 
-        <el-form-item style="margin-bottom: 40px;" label-width="70px" label="Summary:" prop="outline">
+        <el-form-item style="margin-bottom: 40px;" label-width="70px" label="简介:" prop="outline">
           <el-input
             v-model="postForm.outline"
             :rows="1"
@@ -110,7 +110,7 @@ export default {
         callback(new Error(rule.field + "为必传项"));
       } else {
         if(rule.field === "title" || rule.field === "outline"){
-            if(value.size() > 255){
+            if(value.length > 255){
               this.$message({
                 message: rule.field + "长度不可超过255个字符",
                 type: "error"
@@ -144,8 +144,9 @@ export default {
       const id = this.$route.query && this.$route.query.id;
       if(!id){
          this.$router.push({ path: "index" });
+      }else {
+        this.fetchData(id);
       }
-      this.fetchData(id);
     } else {
       this.postForm = Object.assign({}, defaultForm);
     }
