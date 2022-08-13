@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      title: 'MyBlog管理系统',
+      title: 'CyBlog管理系统',
       logo: logoImg
     }
   }

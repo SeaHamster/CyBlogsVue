@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'MyBlog管理系统',
+  title: 'CyBlog管理系统',
 
   /**
    * 是否系统布局配置

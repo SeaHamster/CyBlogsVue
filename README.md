@@ -5,10 +5,10 @@
 
 ```bash
 # 克隆项目
-git clone git@github.com:lurenha/MyBlogVue.git
+git clone git@github.com:SeaHamster/CyBlogsVue.git
 
 # 进入项目目录
-cd MyBlogVue
+cd CyBlogsVue
 
 # 安装依赖
 npm install

@@ -109,6 +109,14 @@ export default {
         });
         callback(new Error(rule.field + "为必传项"));
       } else {
+        if(rule.field === "title" || rule.field === "outline"){
+            if(value.size() > 255){
+              this.$message({
+                message: rule.field + "长度不可超过255个字符",
+                type: "error"
+              });
+            }
+        }
         callback();
       }
     };
