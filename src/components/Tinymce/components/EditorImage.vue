@@ -11,7 +11,7 @@
         :on-remove="handleRemove"
         :on-success="handleSuccess"
         :before-upload="beforeUpload"
-        class="editor-slide-upload"    
+        class="editor-slide-upload"
         :action="actionUrl"
         list-type="picture-card"
       >
@@ -35,14 +35,14 @@
 export default {
   name: 'EditorSlideUpload',
   props: {
-    color: {   
+    color: {
       type: String,
       default: '#1890ff'
     }
   },
   data() {
     return {
-      actionUrl:process.env.VUE_APP_BASE_API+'/admin/blog/upload',
+      actionUrl:process.env.VUE_APP_BASE_API+'/file/upload',
       dialogVisible: false,
       listObj: {},
       fileList: []
