@@ -13,24 +13,28 @@
         :before-upload="beforeUpload"
         class="editor-slide-upload"
         :action="actionUrl"
+        :headers="token"
         list-type="picture-card"
       >
         <el-button size="small" type="primary">
-          Click upload
+<!--          Click upload-->
+          选择文件
         </el-button>
       </el-upload>
       <el-button @click="dialogVisible = false">
-        Cancel
+<!--        Cancel-->
+        取消
       </el-button>
       <el-button type="primary" @click="handleSubmit">
-        Confirm
+<!--        Confirm-->
+        确认
       </el-button>
     </el-dialog>
   </div>
 </template>
 
 <script>
-// import { getToken } from 'api/qiniu'
+import { getToken } from '@/utils/auth'
 
 export default {
   name: 'EditorSlideUpload',
@@ -42,10 +46,13 @@ export default {
   },
   data() {
     return {
-      actionUrl:process.env.VUE_APP_BASE_API+'/file/upload',
+      actionUrl:process.env.VUE_APP_BASE_API+'/admin/blog/upload',
       dialogVisible: false,
       listObj: {},
-      fileList: []
+      fileList: [],
+      token:{
+        'copying-Token':getToken()
+      }
     }
   },
   methods: {
