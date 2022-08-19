@@ -29,7 +29,7 @@
         type="primary"
         icon="el-icon-search"
         @click="handleFilter"
-      >Search</el-button>
+      >查询</el-button>
 
       <el-button
         class="filter-item"
@@ -37,7 +37,7 @@
         type="primary"
         icon="el-icon-edit"
         @click="handleCreate"
-      >Add</el-button>
+      >添加</el-button>
     </div>
 
     <el-table
@@ -98,20 +98,20 @@
 
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="{row}">
-          <el-button type="text" icon="el-icon-edit" size="mini" @click="handleUpdate(row)">Edit</el-button>
+          <el-button type="text" icon="el-icon-edit" size="mini" @click="handleUpdate(row)">修改</el-button>
           <el-button
-            v-if="row.published==false"
+            v-if="row.published===false"
             size="mini"
             type="text"
             @click="handleModifyStatus(row,true)"
-          >Publish</el-button>
+          >发布</el-button>
           <el-button
-            v-if="row.published==true"
+            v-if="row.published===true"
             size="mini"
             type="text"
             @click="handleModifyStatus(row,false)"
-          >Draft</el-button>
-          <el-button size="mini" icon="el-icon-delete" type="text" @click="deleted(row)">Delete</el-button>
+          >草稿</el-button>
+          <el-button size="mini" icon="el-icon-delete" type="text" @click="deleted(row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -138,7 +138,7 @@ export default {
     // 发布状态提示文字
     statusFilter(status) {
       const statusMap = {
-        true: "success",
+        true: "成功",
         false: "info"
       };
       return statusMap[status];
@@ -146,8 +146,10 @@ export default {
     // 发布状态样式
     statusOptionsFilter(status) {
       const statusMap = {
-        true: "published",
-        false: "draft"
+        // true: "published",
+        // false: "draft"
+        true: "已发布",
+        false: "草稿"
       };
       return statusMap[status];
     }

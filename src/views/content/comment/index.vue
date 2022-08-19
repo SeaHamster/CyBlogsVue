@@ -61,17 +61,17 @@
         <template slot-scope="{row}">
           <!-- <el-button type="text" icon="el-icon-edit" size="mini" @click="handleUpdate(row)">Edit</el-button> -->
           <el-button
-            v-if="row.isDelete==false"
+            v-if="row.isDelete===false"
             size="mini"
             type="text"
             @click="handleModifyStatus(row,true)"
-          >Delete</el-button>
+          >删除</el-button>
           <el-button
-            v-if="row.isDelete==true"
+            v-if="row.isDelete===true"
             size="mini"
             type="text"
             @click="handleModifyStatus(row,false)"
-          >Push</el-button>
+          >发布</el-button>
           <!-- <el-button size="mini" icon="el-icon-delete" type="text" @click="deleted(row)">Delete</el-button> -->
         </template>
       </el-table-column>
@@ -122,8 +122,8 @@ export default {
     // 删除状态样式
     statusOptionsFilter(status) {
       const statusMap = {
-        true: "Delete",
-        false: "Push"
+        true: "删除",
+        false: "发布"
       };
       return statusMap[status];
     }

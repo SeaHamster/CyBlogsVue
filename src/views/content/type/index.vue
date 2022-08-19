@@ -6,7 +6,7 @@
       type="primary"
       icon="el-icon-edit"
       @click="handleCreate"
-    >Add</el-button>
+    >添加</el-button>
     <br />
     <br />
     <el-table
@@ -66,8 +66,8 @@
             size="small"
             icon="el-icon-edit"
             @click="row.edit=!row.edit"
-          >Edit</el-button>
-          <el-button size="small" type="danger" @click="deleted(row)">Delete</el-button>
+          >修改</el-button>
+          <el-button size="small" type="danger" @click="deleted(row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>

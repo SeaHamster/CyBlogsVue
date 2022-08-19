@@ -7,7 +7,7 @@
         type="primary"
         icon="el-icon-edit"
         @click="handleCreate"
-      >Add</el-button>
+      >添加</el-button>
     </div>
 
     <el-table
@@ -47,8 +47,8 @@
 
       <el-table-column align="center" label="操作" width="300">
         <template slot-scope="{row}">
-          <el-button type="primary" size="small" icon="el-icon-edit" @click="handleUpdate(row)">Edit</el-button>
-          <el-button size="small" type="danger" @click="handleDelete(row)">Delete</el-button>
+          <el-button type="primary" size="small" icon="el-icon-edit" @click="handleUpdate(row)">修改</el-button>
+          <el-button size="small" type="danger" @click="handleDelete(row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -76,14 +76,15 @@
               <el-select v-model.number="temp.flag" class="filter-item" placeholder="Please select">
                 <el-option label="推荐网站" :value="1" />
                 <el-option label="友情链接" :value="2" />
+                <el-option label="工具网站" :value="3" />
               </el-select>
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">Confirm</el-button>
+        <el-button @click="dialogFormVisible = false">取消</el-button>
+        <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">确认</el-button>
       </div>
     </el-dialog>
   </div>
@@ -108,7 +109,8 @@ export default {
     flagFilter(flags) {
       const flagsMap = {
         1: "推荐网站",
-        2: "友情链接"
+        2: "友情链接",
+        3: "工具网站"
       };
       return flagsMap[flags];
     }
@@ -154,7 +156,7 @@ export default {
         // Just to simulate the time of the request
         setTimeout(() => {
           this.listLoading = false;
-        }, 1 * 200);
+        }, 200);
       });
     },
     resetTemp() {

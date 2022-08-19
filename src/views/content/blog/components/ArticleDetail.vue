@@ -9,8 +9,8 @@
           style="margin-left: 10px;"
           type="success"
           @click="submitForm"
-        >Publish</el-button>
-        <el-button v-loading="loading" type="warning" @click="draftForm">Draft</el-button>
+        >发布</el-button>
+        <el-button v-loading="loading" type="warning" @click="draftForm">草稿</el-button>
       </sticky>
 
       <div class="createPost-main-container">
