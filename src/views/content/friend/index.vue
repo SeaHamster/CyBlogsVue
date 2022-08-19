@@ -84,7 +84,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取消</el-button>
-        <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">确认</el-button>
+        <el-button type="primary" @click="dialogStatus==='添加'?createData():updateData()">确认</el-button>
       </div>
     </el-dialog>
   </div>
@@ -131,8 +131,8 @@ export default {
       dialogFormVisible: false,
       dialogStatus: "",
       textMap: {
-        update: "Edit",
-        create: "Create"
+        update: "修改",
+        create: "添加"
       },
       dialogPvVisible: false,
       downloadLoading: false,
