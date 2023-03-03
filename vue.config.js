@@ -38,8 +38,9 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           // ['^' + process.env.VUE_APP_BASE_API]: ''
-          //['http://127.0.0.1:1555/' + process.env.VUE_APP_BASE_API]: ''
-          ['http://copying.tpddns.cn:1555/' + process.env.VUE_APP_BASE_API]: ''
+          // ['http://127.0.0.1:1555/' + process.env.VUE_APP_BASE_API]: ''
+          // ['http://copying.tpddns.cn:1555/' + process.env.VUE_APP_BASE_API]: ''
+          ['http://fuzhizhong.com/' + process.env.VUE_APP_BASE_API]: ''
         }
       }
     },
